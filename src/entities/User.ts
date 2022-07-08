@@ -1,5 +1,4 @@
 import {
-  BaseEntity,
   Column,
   CreateDateColumn,
   Entity,
@@ -8,12 +7,12 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
-import { FinantialLedger } from './FinantialLedger';
+import { FinancialLedger } from './FinancialLedger';
 import { Token } from './Token';
 
 @Index('id', ['id'], {})
 @Entity({ schema: 'payhere', name: 'users' })
-export class User extends BaseEntity {
+export class User {
   @PrimaryGeneratedColumn({ type: 'int', name: 'id' })
   id: number;
 
@@ -29,8 +28,8 @@ export class User extends BaseEntity {
   @UpdateDateColumn()
   updatedAt: Date;
 
-  @OneToMany(() => FinantialLedger, (finantialledgers) => finantialledgers.id)
-  finantialLedgerList: FinantialLedger[];
+  @OneToMany(() => FinancialLedger, (financialledgers) => financialledgers.user)
+  financialLedgerList: FinancialLedger[];
 
   @OneToMany(() => Token, (token) => token.id)
   tokenList: Token[];
