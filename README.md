@@ -56,8 +56,8 @@ JWT_REFRESH_TOKEN_EXPIRATION_TIME=
 ```
 
 ## API 명세 문서
-- 로컬: http://localhost:3000/api/
-
+- Swagger 라이브러리 이용
+    - http://localhost:3000/api/
 ## ERD
 <img src='https://user-images.githubusercontent.com/56003992/178000483-efd7e0a5-d1a3-495a-afac-129ee9d2088b.png' width=512>
 
